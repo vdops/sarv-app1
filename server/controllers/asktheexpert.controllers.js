@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var AsktheExpert = mongoose.model('AsktheExpert');
 
+var Slack = require('node-slack');
+var hook_url = 'https://hooks.slack.com/services/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';
+var slack = new Slack(hook_url);
 //Post a question 
 module.exports.asktheExpert = function (req, res) {
     var firstName = req.body.firstName;
@@ -30,6 +33,13 @@ module.exports.asktheExpert = function (req, res) {
             res
                 .status(201)
                 .json({success: true, ate: ate});
+            
+            var testString = 
+                slack.send({
+                    text : 'Ask the Expert - New Question Alert for Category:  ' + ate.category,
+                    channel : '#vdops-website', 
+                    username : 'vdops-asktheexpert'
+                })
         }            
     });
 }

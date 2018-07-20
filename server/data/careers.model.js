@@ -9,6 +9,10 @@ var careersSchema = new mongoose.Schema({
        type : String,
        required : true
    },
+   gender : {
+       type : String,
+       required : true
+   },
    qualification : { 
        type : String, 
        required : true
