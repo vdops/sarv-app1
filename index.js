@@ -5,7 +5,7 @@ var path = require('path');
 var routes = require('./server/routes/api.js');
 var bodyParser = require('body-parser');
 
-app.set('port', 3000);
+app.set('port', 3001);
 
 app.use(express.static(path.join(__dirname, 'dist')));
 //app.use(express.static(path.join(__dirname, './asset/uploads')));
