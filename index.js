@@ -4,6 +4,7 @@ var app = express();
 var path = require('path');
 var routes = require('./server/routes/api.js');
 var bodyParser = require('body-parser');
+var http = require('http');
 
 app.set('port', 3001);
 
@@ -16,7 +17,13 @@ app.use(bodyParser.urlencoded({ extended: false, limit : '50mb' }));
 
 app.use('/api', routes);
 
-var server = app.listen(app.get('port'), function(){
-    var port = server.address().port;
-    console.log("api on port" + port);
-});
+http.createServer(function (request, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.end('Hello World! Node.js is working correctly.\n');
+ }).listen(8080);
+ console.log('Server running at http://127.0.0.1:8080/');
+ 
+// var server = app.listen(app.get('port'), function(){
+//     var port = server.address().port;
+//     console.log("api on port" + port);
+// });
