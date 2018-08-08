@@ -20,7 +20,7 @@ var options = {
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: false, limit : '50mb' }));
 
-// https.createServer(options, app).listen(3001);
+https.createServer(options, app).listen(3001);
  app.use('/api', routes);
 
 // http.createServer(function (request, response) {
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false, limit : '50mb' }));
  
 
 
-var server = app.listen(app.get('port'), function(){
-    var port = server.address().port;
-    console.log("api on port" + port);
-});
+// var server = app.listen(app.get('port'), function(){
+//     var port = server.address().port;
+//     console.log("api on port" + port);
+// });
