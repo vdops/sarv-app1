@@ -39,7 +39,7 @@ module.exports.careersApply = function (req, res) {
         }
         else { 
             
-            console.log("Application Posted", careers);
+            console.log("Application Posted:details:", careers);
             res
                 .status(201)
                 .json({success: true, careers: careers});
