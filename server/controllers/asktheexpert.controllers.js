@@ -6,6 +6,7 @@ var hook_url = 'https://hooks.slack.com/services/T9ALK27RV/BAY7XBPEV/eU2RJVoIENq
 var slack = new Slack(hook_url);
 //Post a question 
 module.exports.asktheExpert = function (req, res) {
+    console.log("Printing Request:", req.body);
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var category = req.body.category; 
