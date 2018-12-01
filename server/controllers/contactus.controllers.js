@@ -26,7 +26,7 @@ module.exports.contactUs = function (req, res) {
         }
         else { 
             
-            console.log("Application Posted", contact);
+            console.log("Application Posted:", contact);
             res
                 .status(201)
                 .json({success: true, contact: contact});
