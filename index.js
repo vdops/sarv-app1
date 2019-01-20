@@ -31,7 +31,7 @@ https.createServer(options, app).listen(3001);
  
 console.log('server running on 8001');
 
-var server = app.listen(app.get('port'), function(){
-    var port = server.address().port;
-    console.log("api on port" + port);
-});
+// var server = app.listen(app.get('port'), function(){
+//     var port = server.address().port;
+//     console.log("api on port" + port);
+// });
